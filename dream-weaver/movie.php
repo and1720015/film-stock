@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Works | Film Stock</title>
+<title>Movie | Film Stock</title>
 <meta charset="utf-8">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -17,16 +17,16 @@
 
 <body>
 <?php
-$dsn = 'mysql:host=localhost;port=8889;dbname=movie01;charset=utf8';
-$user = 'root';
-$password = 'root';
-$PDO = new PDO( $dsn, $user, $password ); //MySQLのデータベースに接続
+$dsn = '';
+$user = '';
+$password = '';
+$PDO = new PDO( $dsn, $user, $password ); 
 
 //URLクエリーからパラメーターを取得
 $getID = $_GET[ "id" ];
 
 try {
-  $PDO->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); //PDOのエラーレポートを表示
+  $PDO->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); 
 
   $sql = "SELECT * FROM movie_list WHERE id='$getID'";
   $stmt = $PDO->query( $sql );
@@ -43,6 +43,7 @@ try {
     <div id="about-main" class="clearfix">
       <div id="mainstill"> <img src="<?=$row['image'] ?>"> </div>
       <div id="maintext">
+
         <h3>
           <?=$row['story'] ?>
         </h3>
@@ -51,9 +52,9 @@ try {
           <div class="tag-items"> <a class="tag-item01" href="search_dc.php" style="color: #fff; background: #B19297;"><span class="tag-top01">DC</span></a> <a class="tag-item01" href="search_suspense.php" style="color: #fff; background: #764054;"><span class="tag-top01">サスペンス</span></a> </div>
         </div>-->
         <?=$row['review'] ?>
-        (
+        （
         <?=$row['watched'] ?>
-        )
+        ）
         <div id="cast">
           <h3>STAFF & CAST</h3>
           <p> 監督　
@@ -77,10 +78,5 @@ catch ( PDOException $e ) {
 
 ?>
 </div>
-<fotter class="fotter">
-        <div class="wrapper">
-          <p><small>&copy; 2020 Ando Works</small></p>
-        </div>
-      </fotter>
 </body>
 </html>
