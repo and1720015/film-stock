@@ -45,9 +45,9 @@
 </div>
 
 <?php
-$dsn = 'mysql:host=mysql706.db.sakura.ne.jp;port=3306;dbname=film-stock_movie01;charset=utf8';
-$user = 'film-stock';
-$password = 'and1720015';
+$dsn = '';
+$user = '';
+$password = '';
 $PDO = new PDO($dsn, $user, $password); 
 
 try{
