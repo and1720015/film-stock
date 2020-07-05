@@ -22,9 +22,7 @@
 <header class="page-header wrapper" >
 <h1><a href="index.php">Film Stock</a><span><h5>-> Action</h5></span></h1>
 <nav>
-<!-- <form method="get">
-<input class="form-control form-control-sm" type="text" name="word" placeholder="タイトル検索">
-</form> -->
+
 </nav>
 </header>
 
@@ -47,9 +45,9 @@
 </div>
 
 <?php
-$dsn = 'mysql:host=mysql706.db.sakura.ne.jp;port=3306;dbname=film-stock_movie01;charset=utf8';
-$user = 'film-stock';
-$password = 'and1720015';
+$dsn = '';
+$user = '';
+$password = '';
 $PDO = new PDO($dsn, $user, $password); 
 
 try{
